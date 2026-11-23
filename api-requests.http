@@ -1,0 +1,44 @@
+### Register
+POST http://localhost:8080/api/auth/register
+Content-Type: application/json
+
+{
+  "firstName": "Ali",
+  "lastName": "Valiyev",
+  "email": "ali@example.com",
+  "password": "Ali123456!"
+}
+
+### Verify email (code'ni emailingizdan oling)
+POST http://localhost:8080/api/auth/verify-email
+Content-Type: application/json
+
+{
+  "email": "ali@example.com",
+  "code": "123456"
+}
+
+### Resend email verification code
+POST http://localhost:8080/api/auth/resend-verification
+Content-Type: application/json
+
+{
+  "email": "ali@example.com"
+}
+
+### Login
+POST http://localhost:8080/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "ali@example.com",
+  "password": "Ali123456!"
+}
+
+### My profile (replace token)
+GET http://localhost:8080/api/users/me
+Authorization: Bearer YOUR_ACCESS_TOKEN
+
+### Admin user list (ADMIN token)
+GET http://localhost:8080/api/admin/users
+Authorization: Bearer YOUR_ADMIN_ACCESS_TOKEN
